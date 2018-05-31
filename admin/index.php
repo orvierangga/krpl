@@ -12,6 +12,7 @@
     <title>Masuk KRPL</title>
 	<link rel="shortcut icon" href="img/bjb.png">
 	
+ 
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	
 	<link href="data_tables/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
@@ -43,7 +44,7 @@ date_default_timezone_set('Asia/Jakarta');
 include 'library.php';
 				if(isset($_POST['login'])){
 
-					include"conn.php";
+					include"../conn.php";
 					$username	= $_POST['username'];
 					$password	= md5($_POST['password']);
 					
@@ -85,15 +86,6 @@ $_SESSION['status_petugas'];
 				}
 				?>
 				
-<!--<H1 align ="center">
-  <span class="glyphicon glyphicon-user" aria-hidden="true"></span><a font="50px" href="#" data-toggle="modal" data-target="#modal1" class="btn btn-blue"><STRONG>LOGIN</STRONG></a>
-  </H1>-->
-  
-  
-  <!--<div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content modal-popup">
-				<a href="#" class="close-link"><i class="icon_close_alt2"></i></a>-->
 
   <body background="img/black.jpg">
 <div class="container" background="img/image_5.jpg">

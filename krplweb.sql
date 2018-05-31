@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 17, 2018 at 07:11 AM
--- Server version: 10.1.30-MariaDB
--- PHP Version: 7.2.2
+-- Generation Time: May 31, 2018 at 08:08 AM
+-- Server version: 10.1.9-MariaDB
+-- PHP Version: 5.6.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -55,7 +53,6 @@ CREATE TABLE `data_produk` (
   `kd_produk` varchar(11) NOT NULL,
   `nama_prdk` varchar(50) NOT NULL,
   `jenis_prdk` varchar(50) NOT NULL,
-  `harga` varchar(50) NOT NULL,
   `gambar` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -63,14 +60,14 @@ CREATE TABLE `data_produk` (
 -- Dumping data for table `data_produk`
 --
 
-INSERT INTO `data_produk` (`kd_produk`, `nama_prdk`, `jenis_prdk`, `harga`, `gambar`) VALUES
-('P0001', 'Jus Wortel', 'Minuman', '10000', ''),
-('P0002', 'Jus Tomat', 'Minuman', '10000', ''),
-('P0003', 'Keripik Bayam', 'Makanan', '5000', ''),
-('P0004', 'Keripik Singkong', 'Makanan', '5000', ''),
-('P0005', 'Nuget Tahu', 'Makanan', '20000', ''),
-('P0006', 'Pisang', 'Makanan', '7500', ''),
-('P0008', 'e', 'Makanan', 'e', 'krpl.png');
+INSERT INTO `data_produk` (`kd_produk`, `nama_prdk`, `jenis_prdk`, `gambar`) VALUES
+('P0001', 'Jus Wortel', 'Minuman', ''),
+('P0002', 'Jus Tomat', 'Minuman', ''),
+('P0003', 'Keripik Bayam', 'Makanan', ''),
+('P0004', 'Keripik Singkong', 'Makanan', ''),
+('P0005', 'Nuget Tahu', 'Makanan', ''),
+('P0006', 'Pisang', 'Makanan', ''),
+('P0008', 'e', 'Makanan', 'krpl.png');
 
 -- --------------------------------------------------------
 
@@ -145,7 +142,23 @@ INSERT INTO `log_login` (`no`, `username`, `jam_msk`, `jam_klr`, `tgl_msk`, `tgl
 (132, 'user', '21:05:22', 'logged', '2018-04-24', '---', 'online'),
 (133, 'admin', '08:28:24', 'logged', '2018-04-30', '---', 'online'),
 (134, 'admin', '09:52:09', 'logged', '2018-04-30', '---', 'online'),
-(135, 'admin', '11:58:47', 'logged', '2018-05-17', '---', 'online');
+(135, 'admin', '11:58:47', 'logged', '2018-05-17', '---', 'online'),
+(136, 'admin', '12:25:33', 'logged', '2018-05-17', '---', 'online'),
+(137, 'admin', '12:26:09', 'logged', '2018-05-17', '---', 'online'),
+(138, 'admin', '12:29:58', 'logged', '2018-05-17', '---', 'online'),
+(139, 'admin', '12:30:04', 'logged', '2018-05-17', '---', 'online'),
+(140, 'admin', '12:30:06', 'logged', '2018-05-17', '---', 'online'),
+(141, 'admin', '12:30:16', 'logged', '2018-05-17', '---', 'online'),
+(142, 'admin', '12:30:32', 'logged', '2018-05-17', '---', 'online'),
+(143, 'admin', '12:32:01', 'logged', '2018-05-17', '---', 'online'),
+(144, 'admin', '12:35:01', 'logged', '2018-05-17', '---', 'online'),
+(145, 'admin', '12:38:30', 'logged', '2018-05-17', '---', 'online'),
+(146, 'admin', '12:47:50', 'logged', '2018-05-17', '---', 'online'),
+(147, 'admin', '13:07:14', 'logged', '2018-05-17', '---', 'online'),
+(148, 'admin', '13:08:10', 'logged', '2018-05-17', '---', 'online'),
+(149, 'admin', '09:45:42', 'logged', '2018-05-26', '---', 'online'),
+(150, 'admin', '08:59:50', 'logged', '2018-05-27', '---', 'online'),
+(151, 'admin', '18:20:27', 'logged', '2018-05-28', '---', 'online');
 
 -- --------------------------------------------------------
 
@@ -246,6 +259,19 @@ INSERT INTO `status_petugas` (`no_status`, `nama_status`) VALUES
 ('S01', 'admin'),
 ('S03', 'user');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbgambar`
+--
+
+CREATE TABLE `tbgambar` (
+  `no_gambar` int(11) NOT NULL,
+  `nama_gambar` varchar(200) NOT NULL,
+  `penyimpanan` text NOT NULL,
+  `kd_gambar` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 --
 -- Indexes for dumped tables
 --
@@ -306,6 +332,12 @@ ALTER TABLE `status_petugas`
   ADD UNIQUE KEY `nama_status` (`nama_status`);
 
 --
+-- Indexes for table `tbgambar`
+--
+ALTER TABLE `tbgambar`
+  ADD PRIMARY KEY (`no_gambar`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -313,27 +345,27 @@ ALTER TABLE `status_petugas`
 -- AUTO_INCREMENT for table `log_login`
 --
 ALTER TABLE `log_login`
-  MODIFY `no` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=136;
-
+  MODIFY `no` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=152;
 --
 -- AUTO_INCREMENT for table `permintaan_produk`
 --
 ALTER TABLE `permintaan_produk`
   MODIFY `kd_perm` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
-
 --
 -- AUTO_INCREMENT for table `produk_keluar`
 --
 ALTER TABLE `produk_keluar`
   MODIFY `kd_keluar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
-
 --
 -- AUTO_INCREMENT for table `produk_masuk`
 --
 ALTER TABLE `produk_masuk`
   MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
-COMMIT;
-
+--
+-- AUTO_INCREMENT for table `tbgambar`
+--
+ALTER TABLE `tbgambar`
+  MODIFY `no_gambar` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

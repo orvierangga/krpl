@@ -15,6 +15,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 	
     
+ <script src="js/tinymce.min.js"></script>
     <!-- Custom CSS -->
     <link href="css/sb-admin.css" rel="stylesheet">
 
@@ -28,7 +29,7 @@
 </head>
 
 <body >
-<?php include "conn.php";
+<?php include "../conn.php";
 include "library.php";
 include "seslogin.php";?>
     <div id="wrapper">
@@ -119,7 +120,7 @@ echo $data[8];
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo2"><i class="fa fa-fw fa-arrows-v"></i> Data produk <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo2" class="collapse">
                             <li>
-                                <a href="tampil_prdk.php">Daftar Produk</a>
+                                <a href="data_prdk.php">Daftar Produk</a>
                             </li>
 							
 							<li>

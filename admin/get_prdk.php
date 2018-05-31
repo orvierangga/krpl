@@ -8,7 +8,6 @@ include '../conn.php';?>
       <th>Kode produk</th>
       <th>Nama produk</th>
       <th>Jenis produk</th>
-      <th>Harga Satuan</th>
 	  <th>Gambar</th>
 	 
       <th>Pilihan</th>
@@ -39,12 +38,11 @@ include '../conn.php';?>
            
           <td>'.$data[0].'</td>
           <td align="left">'.$data[1].'</td>
-		  <td>'.$data[2].'</td>
-		  <td>'.$data[3].'</td> ';
-		  if (!empty($data[4])) {
-			  echo' <td><img src="img/'.$data[4].'" width="60" /></td>';
+		  <td>'.$data[2].'</td>';
+		  if (!empty($data[3])) {
+			  echo' <td><img src="img/'.$data[3].'" width="60" /></td>';
 		  }else{
-			  echo '<td>'.$data[4].'</td>';
+			  echo '<td>'.$data[3].'</td>';
 		  } echo'
 
 		<td><a href="edit.php?id='.$data[0].'"  class="btn-primary btn-sm"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a> 
